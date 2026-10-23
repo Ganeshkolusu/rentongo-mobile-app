@@ -1,0 +1,80 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        buildToolsVersion = findProperty('android.buildToolsVersion') ?: '35.0.0'
+        minSdkVersion = Integer.parseInt(findProperty('android.minSdkVersion') ?: '24')
+        compileSdkVersion = Integer.parseInt(findProperty('android.compileSdkVersion') ?: '35')
+        targetSdkVersion = Integer.parseInt(findProperty('android.targetSdkVersion') ?: '35')
+        kotlinVersion = findProperty('android.kotlinVersion') ?: '1.9.25'
+        ndkVersion = "27.0.12077973"
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+
+        // ✅ Add Notifee repository (for Gradle plugin dependency resolution)
+        maven { url "https://notifee-maven.s3.amazonaws.com/release" }
+
+        // Optional: some dependencies use JitPack
+        maven { url "https://www.jitpack.io" }
+    }
+
+    dependencies {
+        // ✅ Must include explicit versions for Gradle & Kotlin plugins
+        classpath("com.android.tools.build:gradle:8.6.0")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.25")
+        classpath("com.google.gms:google-services:4.4.2")
+    }
+}
+
+// ✅ Required for React Native Gradle setup
+apply plugin: "com.facebook.react.rootproject"
+
+// ✅ Keep for legacy resolution (used by some libraries)
+allprojects {
+    repositories {
+        // React Native binaries (from node_modules)
+        maven {
+            url(new File(
+                ['node', '--print', "require.resolve('react-native/package.json')"]
+                    .execute(null, rootDir).text.trim(),
+                '../android'
+            ))
+        }
+
+        // Android JSC (JavaScriptCore) from node_modules
+        maven {
+            url(new File(
+                ['node', '--print', "require.resolve('jsc-android/package.json', { paths: [require.resolve('react-native/package.json')] })"]
+                    .execute(null, rootDir).text.trim(),
+                '../dist'
+            ))
+        }
+
+        // ✅ Local Notifee libs directory (must come before remote)
+        maven {
+            url(new File(
+                ['node', '--print', "require.resolve('@notifee/react-native/package.json')"]
+                    .execute(null, rootDir).text.trim(),
+                '../android/libs'
+            ))
+        }
+
+        google()
+        mavenCentral()
+
+        // ✅ Notifee repository for native SDK
+        maven { url "https://notifee-maven.s3.amazonaws.com/release" }
+
+        // ✅ Optional: JitPack for other libraries
+        maven { url "https://www.jitpack.io" }
+    }
+}
+
+// ✅ Optional - make sure Gradle warnings are displayed
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}

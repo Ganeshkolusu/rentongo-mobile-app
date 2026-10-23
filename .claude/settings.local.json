@@ -1,0 +1,60 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version:*)",
+      "Bash(node:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm install:*)",
+      "Bash(adb devices:*)",
+      "Bash(npx react-native run-android:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(gradlew.bat assembleDebug:*)",
+      "Bash(adb -s 10BF171T64005XB shell am start -n com.rentongovehicle/.MainActivity)",
+      "Bash(adb:*)",
+      "Bash(./gradlew assembleDebug:*)",
+      "Bash(ipconfig:*)",
+      "Bash(./gradlew clean:*)",
+      "Bash(nul)",
+      "Bash(dir:*)",
+      "Bash(timeout 120 bash -c:*)",
+      "Bash(timeout:*)",
+      "Bash(del remove_console.js)",
+      "Bash(gradlew.bat clean:*)",
+      "Bash(git restore:*)",
+      "Bash(ping:*)",
+      "Bash(del \"c:\\rentongovehicle\\src\\utils\\networkUtils.js\")",
+      "Bash(where:*)",
+      "Bash(eas build:*)",
+      "Bash(eas build:configure:*)",
+      "Bash(gradlew.bat bundleRelease:*)",
+      "Bash(.gradlew.bat bundleRelease)",
+      "Bash(pushd:*)",
+      "Bash(call gradlew.bat bundleRelease)",
+      "Bash(popd)",
+      "Bash(androidgradlew.bat bundleRelease)",
+      "Bash(cmd /c \"cd android && gradlew.bat bundleRelease\")",
+      "Bash(cmd /c \"android\\gradlew.bat bundleRelease\")",
+      "Bash(powershell -Command \"Set-Location android; .\\gradlew.bat bundleRelease\")",
+      "Bash(del \"c:\\rentongovehicle\\NOTIFICATION_ISSUE_ANALYSIS.md\")",
+      "Bash(npm start)",
+      "Bash(npx react-native start:*)",
+      "Bash(cmd /c \"cd c:\\rentongovehicle\\android && gradlew.bat assembleDebug\")",
+      "Bash(taskkill /PID 25748 /F)",
+      "Bash(cmd /c \"taskkill /PID 25748 /F\")",
+      "Bash(cmd /c \"taskkill /F /IM node.exe\")",
+      "Bash(cmd /c \"adb -s 10BF171T64005XB install -r c:\\rentongovehicle\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk\")",
+      "Bash(cmd /c \"adb -s kj9lfigi8prwukem install -r c:\\rentongovehicle\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk\")",
+      "Bash(npx expo run:android:*)",
+<<<<<<< HEAD
+      "Bash(.gradlew.bat assembleDebug)",
+      "Bash(./gradlew.bat:*)"
+=======
+      "Bash(cmd /c \"npx react-native start --reset-cache\")",
+      "Bash(npx expo start:*)"
+>>>>>>> 4810ad4faa2be002562651c9018aaabbc780b657
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

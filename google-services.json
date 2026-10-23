@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "406882720905",
+    "project_id": "rentongovehicle-7e6c0",
+    "storage_bucket": "rentongovehicle-7e6c0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406882720905:android:a80b27ee04ba3699b03a58",
+        "android_client_info": {
+          "package_name": "com.anonymous.rentongovehicle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406882720905-hblvjof0fh1snrqurqods2ou7e04ccrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQlZwYMylCVKZJk7Dw3zznhoD70EOAmYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406882720905-hblvjof0fh1snrqurqods2ou7e04ccrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

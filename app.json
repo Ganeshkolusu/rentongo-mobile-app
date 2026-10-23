@@ -1,0 +1,83 @@
+{
+  "expo": {
+    "name": "RentOnGoVehicle",
+    "slug": "rentongovehicle",
+    "version": "7.1.0",
+    "orientation": "portrait",
+    "scheme": "rentongovehicle",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.technoscion.rentongovehicle",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to your camera to take photos of your vehicle for listings and profile pictures.",
+        "NSMicrophoneUsageDescription": "This app needs access to your microphone for voice and video calls with vehicle owners and renters.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images for vehicle listings and profile pictures.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs permission to save photos to your library.",
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to show nearby vehicles and allow you to choose locations on the map.",
+        "NSLocationAlwaysUsageDescription": "This app needs access to your location to show nearby vehicles and allow you to choose locations on the map.",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true,
+          "NSAllowsLocalNetworking": true,
+          "NSExceptionDomains": {
+            "3.110.122.127": {
+              "NSExceptionAllowsInsecureHTTPLoads": true,
+              "NSIncludesSubdomains": true
+            },
+            "localhost": {
+              "NSExceptionAllowsInsecureHTTPLoads": true,
+              "NSIncludesSubdomains": true
+            }
+          }
+        }
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyCkJ2esZiGVeGzs1PWH0YzQ10ZarmaK97U"
+      },
+      "entitlements": {
+        "aps-environment": "development"
+      }
+    },
+    "android": {
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.rentongovehicle",
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCkJ2esZiGVeGzs1PWH0YzQ10ZarmaK97U"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-splash-screen",
+      "expo-dev-client",
+      [
+        "@react-native-firebase/app"
+      ],
+      [
+        "@react-native-firebase/messaging",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7fd55dc2-78f2-4e07-bc98-d5c5c4bf9a9b"
+      }
+    },
+    "owner": "ganesh_kolusu"
+  }
+}
